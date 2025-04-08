@@ -16,5 +16,7 @@ export const useIndexStore = defineStore('indexStore', {
       this.isCollapsed = !this.isCollapsed
     }
   },
-  persist: true,
+  persist: {
+    pick:['isCollapsed'],
+  },
 })
