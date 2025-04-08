@@ -1,11 +1,15 @@
 <script setup>
 import { Avatar, HomeFilled, MessageBox, UserFilled } from '@element-plus/icons-vue'
 import { useIndexStore } from '@/stores/index.js'
+import {useRoute} from 'vue-router'
+const route = useRoute()
 </script>
 
 <template>
   <el-aside width="useIndexStore().isCollapsed?'64px':'200px'">
-    <el-menu :collapse="useIndexStore().isCollapsed">
+    <el-menu :collapse="useIndexStore().isCollapsed"
+             :router="true"
+    :default-active="route.fullPath">
       <el-menu-item index="/home">
         <el-icon>
           <home-filled />
@@ -51,5 +55,9 @@ import { useIndexStore } from '@/stores/index.js'
 <style scoped>
 .el-aside {
   height: 100vh;
+
+  .el-menu{
+    height: 100vh;
+  }
 }
 </style>
