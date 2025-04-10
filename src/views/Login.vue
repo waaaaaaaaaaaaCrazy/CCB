@@ -1,6 +1,7 @@
 <script setup>
 import {reactive,ref} from 'vue'
 import { useRouter } from 'vue-router'
+import axios from 'axios'
 
 const loginForm = reactive({
   username: '',
@@ -30,7 +31,9 @@ const submitForm = ()=>{
       console.log(valid)
       //3设置token
       localStorage.setItem("token","kerwin");
-
+      axios.get("/users").then((res)=>{
+        console.log(res.data)
+      })
       router.push('/index')
     }
   })

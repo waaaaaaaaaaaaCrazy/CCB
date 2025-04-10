@@ -3,6 +3,7 @@ import Login from '@/views/Login.vue'
 import MainBox from '@/views/MainBox.vue'
 import routesConfig from '@/router/config.js'
 import { useIndexStore } from '@/stores/index.js'
+import Home from "@/views/home/Home.vue";
 
 const routes = [
   {
@@ -10,6 +11,11 @@ const routes = [
     name: 'login',
     component: Login
   },
+  // {
+  //   path: '/',
+  //   name: 'home',
+  //   component: Home
+  // },
   {
     path: '/mainBox',
     name: 'mainBox',
